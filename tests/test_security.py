@@ -3,7 +3,7 @@ from bot_utils import validate_public_url, safe_zip_name
 
 class URLValidationTests(unittest.TestCase):
     def test_accepts_public_https_url(self):
-        self.assertEqual(validate_public_url("https://example.com/video"), "https://example.com/video")
+        self.assertEqual(validate_public_url("https://8.8.8.8/video"), "https://8.8.8.8/video")
 
     def test_rejects_non_http_scheme(self):
         with self.assertRaises(ValueError):
