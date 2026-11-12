@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: soo-dajinta-vedio-bot
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: MAX_FILE_MB
+        value: "45"
+      - key: MAX_DURATION_SECONDS
+        value: "3600"
